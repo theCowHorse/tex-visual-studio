@@ -1,0 +1,1 @@
+const o=()=>{throw new Error("PowerPoint import is disabled in the VSCode build of tikzc.")},e=o,i=o,r=o,t=o;export{t as convertSlideToTikZ,i as convertSlidesToTikZ,e as parse,r as parseClipboardGVML};

@@ -1,0 +1,28 @@
+{
+  "name": "tex-visual-studio",
+  "displayName": "TeX Visual Studio — 公式与 TikZ",
+  "description": "离线可视化公式编辑与 TikZ 双向编辑，适用于 LaTeX 和 Markdown。",
+  "version": "0.1.4",
+  "publisher": "joechen-local",
+  "license": "MIT",
+  "engines": { "vscode": "^1.85.0" },
+  "categories": ["Visualization", "Other"],
+  "main": "./src/extension.js",
+  "capabilities": { "untrustedWorkspaces": { "supported": true } },
+  "scripts": { "test": "node --test test/*.test.js" },
+  "contributes": {
+    "commands": [
+      { "command": "texVisual.formula", "title": "TeX Visual: 编辑公式 / 插入公式", "icon": "$(symbol-operator)" },
+      { "command": "texVisual.tikz", "title": "TeX Visual: 打开 TikZ 可视化编辑器", "icon": "$(graph)" },
+      { "command": "texVisual.newTikz", "title": "TeX Visual: 新建 TikZ 图形" }
+    ],
+    "keybindings": [
+      { "command": "texVisual.formula", "key": "ctrl+alt+shift+m", "mac": "cmd+alt+shift+m", "when": "editorTextFocus" },
+      { "command": "texVisual.tikz", "key": "ctrl+alt+shift+t", "mac": "cmd+alt+shift+t", "when": "editorTextFocus" }
+    ],
+    "menus": { "editor/context": [
+      { "command": "texVisual.formula", "group": "texvisual@1" },
+      { "command": "texVisual.tikz", "group": "texvisual@2" }
+    ] }
+  }
+}
